@@ -42,7 +42,7 @@ class Agent:
                 self.w += (
                     ALPHA
                     * (
-                        self.q(encoded_next_state_next_action, is_terminal=is_terminal)
+                        GAMMA * self.q(encoded_next_state_next_action, is_terminal=is_terminal)
                         + reward
                         - self.q(encoded_state_action)
                     )
